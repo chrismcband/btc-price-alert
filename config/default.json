@@ -1,0 +1,10 @@
+{
+  "Providers" : {
+    "CEX": {
+      "name": "CEX.io",
+      "description": "Returns prices for GHS in BTC.",
+      "restUrl": "https://cex.io/api/ticker/GHS/BTC",
+      "refreshInterval": 30000
+    }
+  }
+}
