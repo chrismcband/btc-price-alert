@@ -1,8 +1,10 @@
 var unirest = require('unirest');
 
 function Provider(options){
-  this.name = options.name;
-  this.restUrl = options.restUrl;
+  options = options || {}
+  this.name = options.name || null;
+  this.description = options.description || null;
+  this.restUrl = options.restUrl || null;
   this.refreshInterval = options.refreshInterval || 30000;
 
   this.last = 0;
@@ -48,6 +50,22 @@ Provider.prototype.stopListening = function(){
   clearInterval(this.timerId);
 };
 
+Provider.prototype.getName = function(){
+  return this.name;
+};
+
+Provider.prototype.getDescription = function(){
+  return this.description;
+};
+
+Provider.prototype.getRestUrl = function(){
+  return this.restUrl;
+};
+
+Provider.prototype.getRefreshInterval = function(){
+  return this.refreshInterval;
+};
+
 Provider.prototype.getBid = function(){
   return this.bid;
 };
@@ -67,3 +85,5 @@ Provider.prototype.getLow = function(){
 exports.createProvider = function(options){
   return new Provider(options);
 };
+
+exports.Provider = Provider;

@@ -15,5 +15,10 @@
     "morgan": "~1.0.0",
     "static-favicon": "~1.0.0",
     "unirest": "^0.2.7"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "sinon": "^1.10.2",
+    "sinon-chai": "^2.5.0"
   }
 }
